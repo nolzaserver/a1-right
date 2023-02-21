@@ -1,3 +1,4 @@
+const mySecret = process.env['TOKEN']
 const { bprefix, developerID } = require("./config.json")
 const math = require("mathjs")
 const { config } = require("dotenv");
@@ -63,7 +64,7 @@ client.on("message", async message => {
         Bot Prefix: \`${prefix}\`
         Invite Link: [Click Here](https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot%20applications.commands)
 
-        :question: Still need help? [Click Here](https://discord.gg/gU7XAxTpX5) to join server
+        :question: Still need help? [Click Here](https://discord.gg/ZZ3SueTWmZ) to join server
         `)
         .setThumbnail(client.user.displayAvatarURL())
         .setColor("#006732")
@@ -80,7 +81,7 @@ client.on("message", async message => {
 let ad = ads.ad[Math.floor((Math.random() * ads.ad.length))];
   if(cooldown.has(message.author.id)){
 
-    return message.channel.send(`**${message.author.username}** please wait 3 seconds to use this command again! \n\n ${ad}`)
+    return message.channel.send(`**${message.author.username}**.. 미안해! 3초 뒤에 다시 명령어를 실행해 줘 (*´﹃｀*)`)
   }
   cooldown.add(message.author.id);
   setTimeout(() => {
@@ -107,7 +108,7 @@ cooldown.delete(message.author.id)}, cdseconds * 1000)
 
 
     if (!guild) {
-      return message.channel.send(`You can use this command in only premium server. \n **Want to make your server premium?** Donate US!: https://paypal.me/atreyadiwas `)
+      return message.channel.send(`미안해.. 이 기능은 아직 없는 기능이야 (˵¯͒࿄¯͒˵)`)
     }
 
   }
@@ -138,7 +139,7 @@ const chan = client.channels.cache.get(channel);
 
      if(isNaN(message.content)) {
        message.delete();
-                return message.author.send(`You should include only number!`)
+                return message.author.send(`숫자만 포함되어 있어야 해 *罒*`)
             
             }
 message.channel.send(`${math.evaluate(`${message.content} + 1`)}`)
@@ -157,7 +158,7 @@ require('http').createServer((req, res) => res.end(`
  |-----------------------------------------|
  |• Alive: 24/7                            |
  |-----------------------------------------|
- |• Author: Atreya#2401                   |
+ |• Author: Supreme#2401                   |
  |-----------------------------------------|
  |• Server: https://discord.gg/gU7XAxTpX5  |
  |-----------------------------------------|
@@ -168,7 +169,7 @@ require('http').createServer((req, res) => res.end(`
 `)).listen(3000) //Dont remove this 
 
 client.on("ready", () => {
-   client.user.setStatus("dnd"); // You can change it to online, dnd, idle
+   client.user.setStatus("online"); // You can change it to online, dnd, idle
 
  console.log(`Successfully logined as ${client.user.tag} `)
 });
